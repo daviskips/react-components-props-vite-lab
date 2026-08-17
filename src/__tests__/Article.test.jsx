@@ -1,12 +1,7 @@
-function Article(props) {
-  const dateStr = props.date || "January 1, 1970";
-  return (
-    <article>
-      <h3>{props.title}</h3>
-      <small>{dateStr}</small>
-      <p>{props.preview}</p>
-    </article>
-  );
-}
+import { render, screen } from "@testing-library/react";
+import Article from "../components/Article";
 
-export default Article;
+test("renders Article component", () => {
+  render(<Article title="Components in React" preview="A quick preview" />);
+  expect(screen.getByText("Components in React")).toBeInTheDocument();
+});

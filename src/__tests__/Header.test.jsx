@@ -1,11 +1,7 @@
-function About(props) {
-  const imageSrc = props.image || "https://via.placeholder.com/215";
-  return (
-    <aside>
-      <img src={imageSrc} alt="blog logo" />
-      <p>{props.about}</p>
-    </aside>
-  );
-}
+import { render, screen } from "@testing-library/react";
+import Header from "../components/Header";
 
-export default About;
+test("renders Header component", () => {
+  render(<Header name="Underreacted" />);
+  expect(screen.getByText("Underreacted")).toBeInTheDocument();
+});

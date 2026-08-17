@@ -1,17 +1,6 @@
-import React from "react";
-import blogData from "../data/blog";
-import Header from "./Header";
-import About from "./About";
-import ArticleList from "./ArticleList";
+import { render } from "@testing-library/react";
+import App from "../components/App";
 
-function App() {
-  return (
-    <div className="App">
-      <Header name={blogData.name} />
-      <About image={blogData.image} about={blogData.about} />
-      <ArticleList posts={blogData.posts} />
-    </div>
-  );
-}
-
-export default App;
+test("renders App component", () => {
+  render(<App />);
+});
